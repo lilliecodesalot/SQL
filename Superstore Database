@@ -25,21 +25,26 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
-#Use a SELECT statement to order items by price.
+-- Order Items by Price
+
 SELECT item_name, price
 FROM superstore
-ORDER BY price desc;
+ORDER BY price;
 
-#Show a statistic about the item prices.
-SELECT MAX(price)
-FROM superstore;
+-- Statistic about Item Prices, average price per category
 
-#Show a statistic about th price for items in the category of "Kitchen Supplies".
-SELECT AVG(price)
+SELECT category, AVG(price)
 FROM superstore
-WHERE category="Kitchen Supplies";
+GROUP BY category;
 
-#Show all items in "Electronics" category ordered by highest rating with their prices.
+-- Statistic about Kitchen Supplies, total cost of purchases
+
+SELECT SUM(price)
+FROM superstore
+WHERE category='Kitchen Supplies';
+
+-- What items in Electronics has the best rating and for what price
+
 SELECT average_rating, item_name, price
 FROM superstore
 WHERE category="Electronics"
