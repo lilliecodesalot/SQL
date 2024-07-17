@@ -60,8 +60,6 @@ VALUES
 
 -- Analysis
 
-SELECT *
-FROM fortune_companies;
 
 -- What is the average tenure for companies with health insurance, 3+ weeks of vacation, and 14+ weeks maternity leave?
 
